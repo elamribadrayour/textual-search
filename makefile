@@ -12,3 +12,11 @@ prod-requirements:
 	requirements/nlp.txt \
 	requirements/fastapi.txt \
 	>> requirements.txt
+
+ci-requirements:
+	cat \
+	requirements/ml.txt \
+	requirements/nlp.txt \
+	requirements/fastapi.txt \
+	requirements/ci.txt \
+	>> requirements.txt
