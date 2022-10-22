@@ -1,6 +1,6 @@
-"""NLP running"""
+"""Preprocessing with spacy."""
+
 from functools import partial
-from locale import normalize
 
 import textacy
 import textacy.extract.basics
@@ -20,13 +20,12 @@ clean_pipeline = textacy.preprocessing.make_pipeline(
     partial(textacy.preprocessing.replace.phone_numbers, repl=""),
     partial(textacy.preprocessing.replace.urls, repl=""),
     partial(textacy.preprocessing.replace.user_handles, repl=""),
-
 )
 
 remove_pipeline = textacy.preprocessing.make_pipeline(
-        textacy.preprocessing.remove.brackets,
-        textacy.preprocessing.remove.html_tags,
-        textacy.preprocessing.remove.punctuation,
+    textacy.preprocessing.remove.brackets,
+    textacy.preprocessing.remove.html_tags,
+    textacy.preprocessing.remove.punctuation,
 )
 
 normalize_pipeline = textacy.preprocessing.make_pipeline(
@@ -43,8 +42,9 @@ preprocessing_pipeline = textacy.preprocessing.make_pipeline(
 
 
 def get_cleaned(raw_text: str) -> str:
+    """Clean text."""
     if isinstance(raw_text, str) is False:
-        return ""
+        return []
 
     clean_text = preprocessing_pipeline(raw_text)
     clean_text = clean_text.lower()
@@ -53,8 +53,9 @@ def get_cleaned(raw_text: str) -> str:
 
 
 def get_lemmas(raw_text: str) -> list:
+    """Get Lemmas."""
     if isinstance(raw_text, str) is False:
-        return ""
+        return []
 
     clean_text = get_cleaned(raw_text=raw_text)
     document = textacy.spacier.core.make_spacy_doc(

@@ -10,3 +10,11 @@ services:
       - 8001:80
     volumes:
       - ./:/opt/app
+
+  textual_search_ci:
+    image: textual_search:0.1
+    build:
+      context: .
+      dockerfile: ./Dockerfile.ci
+    volumes:
+      - ./:/opt/app

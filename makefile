@@ -2,7 +2,7 @@ ci-init:
 	pip install -r requirements.txt
 
 ci-run:
-	black . && \
+	black --check . && \
 	flake8 . && \
 	mypy .
 

@@ -1,1 +1,1 @@
-"""Countries, Cities and States Api."""
+"""Api for embeddings."""
