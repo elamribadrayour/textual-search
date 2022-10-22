@@ -8,7 +8,7 @@ ci-run:
 
 prod-requirements:
 	cat \
-	requirements/nlp.txt \
 	requirements/ml.txt \
+	requirements/nlp.txt \
 	requirements/fastapi.txt \
 	>> requirements.txt

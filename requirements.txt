@@ -1,3 +1,5 @@
+https://download.pytorch.org/whl/torch_stable.html
+
 numpy==1.23.4
 pandas==1.5.1
 spacy==3.4.2
@@ -7,7 +9,7 @@ numpy==1.23.4
 pandas==1.5.1
 spacy==3.4.2
 textacy==0.12.0
-sentence-transformers--find-links https://download.pytorch.org/whl/torch_stable.html
+sentence-transformers--find-links
 
 torch
 torchvision
